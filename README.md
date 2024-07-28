@@ -1,4 +1,4 @@
-# paljs
+# palworld-ts
 
 TS wrapper for the Palworld REST API
 
