@@ -14,9 +14,9 @@ export default class {
   /**
    *
    * @param ip server IP address
-   * @param username server admin username. Default is "admin"
-   * @param port REST API port. NOT THE SAME AS THE SERVER PORT! Default is 8212
    * @param password server admin password
+   * @param port REST API port. NOT THE SAME AS THE SERVER PORT! Default is 8212
+   * @param username server admin username. Default is "admin"
    */
   constructor(ip: string, password: string, port: number = 8212, username = 'admin') {
     const auth: AxiosBasicCredentials = { username, password }

@@ -3,6 +3,7 @@
 TS wrapper for the Palworld REST API
 
 ## Basic Usage
+
 ```
 import PalworldAPI from pal-ts
 
@@ -13,7 +14,8 @@ const playerList = await api.playerList()
 ```
 
 ## Available Functions
-`basicInfo()` - returns basic server information
+
+`status()` - returns server status and basic server information (if online)
 
 `playerList()` - gets list of online players and their attributes
 

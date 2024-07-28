@@ -1,6 +1,6 @@
 {
   "name": "pal-ts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "module": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
