@@ -1,6 +1,7 @@
 import axios, { type AxiosBasicCredentials, type AxiosInstance, type AxiosResponse } from 'axios'
 import type {
   BasicInfo,
+  Player,
   PlayerList,
   ServerAction,
   ServerMetrics,
@@ -69,43 +70,44 @@ export default class {
     }
   }
 
-  async playerList(): Promise<PlayerList> {
-    return this.getRequest(`/players`)
+  async playerList(): Promise<Player[]> {
+    const res = await this.getRequest<PlayerList>('/players')
+    return res.players
   }
 
   async settings(): Promise<ServerSettings> {
-    return this.getRequest(`/settings`)
+    return this.getRequest<ServerSettings>(`/settings`)
   }
 
   async metrics(): Promise<ServerMetrics> {
-    return this.getRequest(`/metrics`)
+    return this.getRequest<ServerMetrics>(`/metrics`)
   }
 
   async announce(message: string): Promise<ServerAction> {
-    return this.postRequest(`/accounce`, { message })
+    return this.postRequest<ServerAction>(`/accounce`, { message })
   }
 
   async kick(userid: string, message: string): Promise<ServerAction> {
-    return this.postRequest(`/kick`, { userid, message })
+    return this.postRequest<ServerAction>(`/kick`, { userid, message })
   }
 
   async ban(userid: string, message: string): Promise<ServerAction> {
-    return this.postRequest(`/ban`, { userid, message })
+    return this.postRequest<ServerAction>(`/ban`, { userid, message })
   }
 
   async unban(userid: string): Promise<ServerAction> {
-    return this.postRequest(`/unban`, { userid })
+    return this.postRequest<ServerAction>(`/unban`, { userid })
   }
 
   async save(): Promise<ServerAction> {
-    return this.postRequest(`/save`, {})
+    return this.postRequest<ServerAction>(`/save`, {})
   }
 
   async shutdown(waittime: number, message: string): Promise<ServerAction> {
-    return this.postRequest(`/shutdown`, { waittime, message })
+    return this.postRequest<ServerAction>(`/shutdown`, { waittime, message })
   }
 
   async stop(): Promise<ServerAction> {
-    return this.postRequest(`/stop`, {})
+    return this.postRequest<ServerAction>(`/stop`, {})
   }
 }
