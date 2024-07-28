@@ -6,8 +6,9 @@ TS wrapper for the Palworld REST API
 ```
 import PalworldAPI from pal-ts
 
-// username is optional, default is 'admin'
-const api = PalworldAPI('localhost:8212', 'admin_password', 'admin_username')
+// optionally can also pass port (default is 8212) and username (default is admin)
+// i.e. new PalworldAPI('localhost', 'admin_password', 8213, 'admin_username')
+const api = new PalworldAPI('localhost', 'admin_password')
 const playerList = await api.playerList()
 ```
 
