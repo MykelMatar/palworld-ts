@@ -11,13 +11,15 @@ export default class {
 
     /**
      *
-     * @param ip API base url. Should look like: localhost:8212
+     * @param ip server IP address
      * @param username server admin username. Default is "admin"
-     * @param password server admin password (set in the PalWorldSettings.ini file)
+     * @param port REST API port. NOT THE SAME AS THE SERVER PORT! Default is 8212
+     * @param password server admin password
      */
-    constructor(ip: string, password: string, username = 'admin') {
+    constructor(ip: string, password: string, port: number = 8212, username = 'admin') {
         const auth: AxiosBasicCredentials = { username, password }
         const baseURL = `http://${ip}/v1/api`
+
         this.axiosInstance = axios.create({
             baseURL,
             headers: {

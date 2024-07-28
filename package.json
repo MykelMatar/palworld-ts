@@ -1,6 +1,6 @@
 {
-  "name": "palworld-ts",
-  "version": "0.0.1",
+  "name": "pal-ts",
+  "version": "0.0.3",
   "module": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

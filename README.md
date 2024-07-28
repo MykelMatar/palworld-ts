@@ -1,10 +1,10 @@
-# palworld-ts
+# pal-ts
 
 TS wrapper for the Palworld REST API
 
 ## Basic Usage
 ```
-import PalworldAPI from palworld-ts
+import PalworldAPI from pal-ts
 
 // username is optional, default is 'admin'
 const api = PalworldAPI('localhost:8212', 'admin_password', 'admin_username')
