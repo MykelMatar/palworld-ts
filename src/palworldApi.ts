@@ -70,7 +70,7 @@ export default class {
     }
   }
 
-  async playerList(): Promise<Player[]> {
+  async players(): Promise<Player[]> {
     const res = await this.getRequest<PlayerList>('/players')
     return res.players
   }
